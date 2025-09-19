@@ -1,0 +1,2 @@
+1. enable 32-bit architecture 
+'''dpkg --add-architecture i386'''

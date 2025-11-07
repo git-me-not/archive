@@ -1,0 +1,10 @@
+Package: EShare
+Version: 7.6.1023
+Maintainer: EShare <info@ee-share.com>
+Section: video
+Architecture: amd64
+Priority: optional
+Description: EShare is a screen sharing tool which makes the user experience natural and enjoyable for business presentation,and educational training.To use this app,you need a TV/Projector/IFPD/Display with ESharePro pre-installed.
+
+
+

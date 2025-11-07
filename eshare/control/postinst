@@ -1,0 +1,43 @@
+#!/bin/sh
+echo "Checking Ubuntu/Debian version..."
+VER=$(lsb_release --release | cut -f2)
+
+ cp /opt/EShare/EShare.desktop /usr/share/applications/
+ cp /opt/EShare/org.gnome.audio-recorder.gschema.xml /usr/share/glib-2.0/schemas/
+ glib-compile-schemas /usr/share/glib-2.0/schemas
+
+if dpkg --compare-versions $VER ge 13; then
+	 rm -rf /opt/EShare/lib/libgst*
+     cp /opt/EShare/pactl /usr/bin/
+     cp -r /opt/EShare/pulseaudio /usr/lib/x86_64-linux-gnu/
+	 echo "Debian version is 13"
+elif dpkg --compare-versions $VER ge 12; then
+	 rm -rf /opt/EShare/lib/libgst*
+	 cp /opt/EShare/pactl /usr/bin/
+	 cp -r /opt/EShare/pulseaudio /usr/lib/x86_64-linux-gnu/
+	 echo "Debian version is 12"
+elif dpkg --compare-versions $VER ge 24.04; then
+	 rm -rf /opt/EShare/lib/libgst*
+     cp /opt/EShare/pactl /usr/bin/
+     cp -r /opt/EShare/pulseaudio /usr/lib/x86_64-linux-gnu/
+	 echo "Ubuntu version is 24.04"
+elif dpkg --compare-versions $VER ge 23.10; then
+	 rm -rf /opt/EShare/lib/libgst*
+	 cp /opt/EShare/pactl /usr/bin/
+	 cp -r /opt/EShare/pulseaudio /usr/lib/x86_64-linux-gnu/
+	 echo "Ubuntu version is 23.10"
+elif dpkg --compare-versions $VER ge 22.04; then
+	 cp -a /opt/EShare/extralib_2204/* /opt/EShare/lib/
+	 echo "Ubuntu version is 22.04"
+elif dpkg --compare-versions $VER ge 20.04; then
+	 cp -a /opt/EShare/extralib_2004/* /opt/EShare/lib/
+	 echo "Ubuntu version is 20.04"
+elif dpkg --compare-versions $VER ge 18.04; then
+     echo "Ubuntu version is 18.04"
+else
+	 rm -rf /opt/EShare/lib/libgst*
+	 cp -a /opt/EShare/extralib_fedora/* /lib64/
+	 echo "this is fedora"
+exit 0
+
+fi

@@ -1,13 +1,11 @@
 I'm considering containerization so my host system isn't too cluttered. This is especially important for ricing purpose, as I need multiple rice-specific programs only to make my system beautiful.
-\
-\
-# Podman \
+
+# Podman
 ```apt install podman uidmap pasta``` 
-\
-\
-# Distrobox \
+
+# Distrobox
 This program + xserver nested will make my life easier when testing my rice. \
-```apt install distrobox``` \
+```apt install distrobox``` 
 \
 To run: \
 ```distrobox create --name testbox --image docker.io/library/debian:stable --home ~/containers/testbox``` \
@@ -17,9 +15,9 @@ Explanation: \
 --home = custom home directory for the container \
 \
 To enter use: \
-```distrobox enter testbox``` \
-\
-# Xserver-Xephyr \
+```distrobox enter testbox``` 
+
+# Xserver-Xephyr
 A program that allows you to run a nested X server inside your host. \
 ```apt install xserver-xephyr``` \
 \

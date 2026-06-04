@@ -35,7 +35,5 @@ Enter distrobox: \
 Then run this command in the terminal: \
 ```DISPLAY=:1 openbox-session &``` \
 Explanation: \
-DISPLAY = Xephyr's ID(?) that you set. \
-openbox-session = This'll run Openbox (WM). Change it into your preferred WMs or other programs with a graphical interface.
 DISPLAY = set to your Xephyr's display ID(?) \
 openbox-session = this will run openbox (wm) on the nested server. change it to your preferred WMs or other programs with a graphical interface.
